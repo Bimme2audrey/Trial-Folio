@@ -1,0 +1,57 @@
+.footer {
+  background: #1a1a2e;
+  color: white;
+  padding: 40px 0 20px;
+  position: relative;
+}
+
+.footer-content {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.copyright p {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  margin: 0;
+}
+
+.scroll-to-top {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #d92cf9, #8b5cf6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(139, 92, 246, 0.3);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+}
+
+.scroll-to-top i {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .scroll-to-top i {
+    font-size: 1rem;
+  }
+}

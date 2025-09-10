@@ -10,7 +10,7 @@ const Hero = () => {
           <ScrollAnimation animation="fadeInUp" delay={0.2}>
             <div className="hero-text">
               <h1>
-                hi 👋 <span>,</span> I am <br /> 
+                Hii 👋 <span>,</span> I am <br /> 
                 <span className="highlight">Bimme</span> <br /> 
                 <span className="highlight">Audrey</span> <span>.</span>
               </h1>

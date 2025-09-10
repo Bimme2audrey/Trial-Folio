@@ -20,10 +20,10 @@ function App() {
       <About />
       
       <SectionDivider type="wave" backgroundColor="var(--bg-primary)" />
-      <Education />
+      <Skills />
       
       <SectionDivider type="curve" backgroundColor="var(--bg-secondary)" />
-      <Skills />
+      <Education />
       
       <SectionDivider type="triangle" backgroundColor="var(--bg-primary)" />
       <Portfolio />

@@ -12,15 +12,15 @@ const Portfolio = () => {
         title: "Portfolio Project",
         
         image: "/images/portfolio.jpg", 
-        link: "https://audreyh.netlify.app",
+        link: "https://bimmeaudrey.vercel.app",
         description: "Personal portfolio website built with React"
       },
       {
         id: 2,
-        title: "Report Project",
+        title: "Recipe Project",
         image: "/images/report-dashboard.jpg",
         link: "https://bimmesreport.netlify.app",
-        description: "Full-stack report management system"
+        description: "Recipe management system"
       }
     ],
     uiUx: [
@@ -28,14 +28,14 @@ const Portfolio = () => {
         id: 3,
         title: "Web App Design",
         image: "/images/order.png",
-        link: "https://your-design-link.com",
+        link: "https://www.figma.com/design/1AJ740hpKMXEPZpHFecba9/CAPVETS?t=cFYjmor7BRA0zkIJ-0",
         description: "Modern chicken ordering web app UI/UX design with user-centric approach"
       },
       {
         id: 4,
         title: "Kids Learning Platform",
         image: "/images/kiddy.png",
-        link: "https://your-redesign-link.com",
+        link: "https://www.figma.com/design/cgTysG7PNw1uYbQCSvDSBV/Kiddify%F0%9F%8C%B8?t=hKZxbRJRKRBmMRVd-0",
         description: "Kids learning platform design focusing on conversion optimization"
       },
        {
@@ -49,7 +49,7 @@ const Portfolio = () => {
         id: 5,
         title: "Login Form Design",
         image: "/images/Editor.png",
-        link: "https://your-design-link.com",
+        link: "https://www.figma.com/design/fkG1Gl5bUFLLQ3SHJuc10D/cAuD?t=SiFStNvSWBYZf1Mh-0",
         description: "Login Form paying attention to details and user experience"
       }
     

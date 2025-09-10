@@ -62,7 +62,7 @@ const About = () => {
                         </a>
                       </li>
                       <li>
-                        <a href="https://x.com/small_bimme?t=O9jMSfusQDDx2rIYRVVbFQ&s=09" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/Bimme2audrey" target="_blank" rel="noopener noreferrer">
                           <i className="fa fa-twitter"></i>
                         </a>
                       </li>

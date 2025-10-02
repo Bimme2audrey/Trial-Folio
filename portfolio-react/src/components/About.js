@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
 import ScrollAnimation from './ScrollAnimation';
+import {Camera, Image, Phone, Mail, BookOpen, Linkedin, Github } from 'lucide-react';
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
       <div className="container">
         <ScrollAnimation animation="fadeInUp" delay={0.2}>
           <div className="section-heading">
-            <h2>About Me 🌱📸</h2>
+            <h2>About Me <Camera size={24} className="icon" /></h2>
           </div>
         </ScrollAnimation>
         
@@ -27,15 +28,15 @@ const About = () => {
                   
                   <div className="contact-info">
                     <div className="info-item">
-                      <h4>Phone</h4>
+                      <h4><Phone className="icon" /> Phone</h4>
                       <p>+237-673-795-727</p>
                     </div>
                     <div className="info-item">
-                      <h4>Email</h4>
+                      <h4><Mail className="icon" /> Email</h4>
                       <p>bimmedev@gmail.com</p>
                     </div>
                     <div className="info-item">
-                      <h4>Blog</h4>
+                      <h4><BookOpen className="icon" /> Blog</h4>
                       <p>
                         <a href="https://bimme.hashnode.dev" target="_blank" rel="noopener noreferrer">
                           Bimme's Space
@@ -51,19 +52,19 @@ const About = () => {
               <div className="col-right">
                 <div className="about-image">
                   <div className="image-placeholder">
-                    <p>Image Loading 🟣</p>
+                    <p><Image size={24} className="icon" /> Loading</p>
                   </div>
                   
                   <div className="social-links">
                     <ul>
                       <li>
                         <a href="https://www.linkedin.com/in/bimme-audrey" target="_blank" rel="noopener noreferrer">
-                          <i className="fa fa-linkedin"></i>
+                          <Linkedin size={24} className="icon" />
                         </a>
                       </li>
                       <li>
                         <a href="https://github.com/Bimme2audrey" target="_blank" rel="noopener noreferrer">
-                          <i className="fa fa-twitter"></i>
+                          <Github size={24} className="icon" />
                         </a>
                       </li>
                     </ul>

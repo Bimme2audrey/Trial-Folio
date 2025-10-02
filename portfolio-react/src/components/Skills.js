@@ -1,23 +1,24 @@
 import React from 'react';
 import './Skills.css';
+import { Palette } from 'lucide-react';
 
 const Skills = () => {
   const skillsData = [
     { name: "HTML 5", percentage: 90 },
-    { name: "CSS 3 Animation", percentage: 85 },
-    { name: "JavaScript", percentage: 75 },
-    { name: "ReactJS", percentage: 45 },
-    { name: "Communication", percentage: 30 },
-    { name: "Creativity", percentage: 60 },
-    { name: "Team Work", percentage: 30 },
-    { name: "Github", percentage: 60 }
+    { name: "CSS 3 Animation", percentage: 80 },
+    { name: "JavaScript", percentage: 85 },
+    { name: "ReactJS", percentage: 75 },
+    { name: "Communication", percentage: 70 },
+    { name: "Creativity", percentage: 80 },
+    { name: "Team Work", percentage: 70 },
+    { name: "Github", percentage: 70 }
   ];
 
   return (
     <section id="skills" className="skills">
       <div className="container">
         <div className="section-heading">
-          <h2>Skills 🎨</h2>
+          <h2>Skills <Palette size={24} className="icon" /></h2>
         </div>
         
         <div className="skills-content">

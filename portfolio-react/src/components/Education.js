@@ -1,5 +1,6 @@
 import React from 'react';
 import './Education.css';
+import { GraduationCap } from 'lucide-react';
 
 const Education = () => {
   const educationData = [
@@ -30,7 +31,7 @@ const Education = () => {
     <section id="education" className="education">
       <div className="container">
         <div className="section-heading">
-          <h2>Education/Experience 🔮</h2>
+          <h2>Education/Experience <GraduationCap size={24} className="icon" /></h2>
         </div>
         
         <div className="education-timeline">

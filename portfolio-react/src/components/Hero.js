@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import ScrollAnimation from './ScrollAnimation';
+import { Hand, Monitor } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -10,7 +11,7 @@ const Hero = () => {
           <ScrollAnimation animation="fadeInUp" delay={0.2}>
             <div className="hero-text">
               <h1>
-                Hii 👋 <span>,</span> I am <br /> 
+                Hi <Hand size={32} className="wave-icon" /> <span>,</span> I am <br /> 
                 <span className="highlight">Bimme</span> <br /> 
                 <span className="highlight">Audrey</span> <span>.</span>
               </h1>
@@ -19,7 +20,7 @@ const Hero = () => {
           
           <ScrollAnimation animation="fadeInUp" delay={0.4}>
             <p className="hero-subtitle">
-              Junior Frontend - Web Developer 👩‍💻
+              Junior Frontend - Web Developer <Monitor size={24} className="dev-icon" />
             </p>
           </ScrollAnimation>
           

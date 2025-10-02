@@ -102,6 +102,12 @@
   color: var(--text-secondary);
 }
 
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .timeline-container::before {

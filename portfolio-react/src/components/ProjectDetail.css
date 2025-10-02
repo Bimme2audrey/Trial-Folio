@@ -1,0 +1,236 @@
+.project-detail {
+  padding: 120px 0 80px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+.project-detail .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-bottom: 40px;
+}
+
+.back-btn:hover {
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  transform: translateX(-5px);
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.project-category {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.project-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.project-tagline {
+  font-size: 20px;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-image-main {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 60px;
+  box-shadow: var(--shadow-md);
+}
+
+.project-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 60px;
+  align-items: start;
+}
+
+.project-main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.project-section h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.project-section p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-tag {
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  transform: translateY(-2px);
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  padding: 15px 0;
+  padding-left: 30px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.features-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.project-sidebar {
+  position: sticky;
+  top: 120px;
+}
+
+.project-links-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.project-links-card h3 {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.project-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  gap: 10px;
+}
+
+.project-link-btn:hover {
+  border-color: var(--accent-primary);
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .project-sidebar {
+    position: static;
+  }
+
+  .project-header h1 {
+    font-size: 36px;
+  }
+
+  .project-section h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 100px 0 60px;
+  }
+
+  .project-header h1 {
+    font-size: 32px;
+  }
+
+  .project-tagline {
+    font-size: 18px;
+  }
+
+  .project-section h2 {
+    font-size: 24px;
+  }
+
+  .project-section p,
+  .features-list li {
+    font-size: 16px;
+  }
+}

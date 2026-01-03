@@ -11,32 +11,46 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SectionDivider from './components/SectionDivider';
 import ProjectDetail from './components/ProjectDetail';
+import { Helmet } from 'react-helmet-async';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <SectionDivider type="zigzag" backgroundColor="var(--bg-secondary)" />
-              <About />
-              <SectionDivider type="wave" backgroundColor="var(--bg-primary)" />
-              <Skills />
-              <SectionDivider type="curve" backgroundColor="var(--bg-secondary)" />
-              <Education />
-              <SectionDivider type="triangle" backgroundColor="var(--bg-primary)" />
-              <Portfolio />
-              <SectionDivider type="zigzag" backgroundColor="var(--bg-secondary)" />
-              <Contact />
-            </>
-          } />
-          <Route path="/project/:id" element={<ProjectDetail />} />
-        </Routes>
-        <Footer />
-      </div>
+      <>
+        <Helmet>
+          <title>Bimme Audrey || Frontend Developer</title>
+          <meta
+            name="Bimme Audrey"
+            content="Frontend developer portfolio showcasing React projects, UI/UX designs, and modern responsive websites."
+          />
+        </Helmet>
+
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero />
+                  <SectionDivider type="zigzag" backgroundColor="var(--bg-secondary)" />
+                  <About />
+                  <SectionDivider type="wave" backgroundColor="var(--bg-primary)" />
+                  <Skills />
+                  <SectionDivider type="curve" backgroundColor="var(--bg-secondary)" />
+                  <Education />
+                  <SectionDivider type="triangle" backgroundColor="var(--bg-primary)" />
+                  <Portfolio />
+                  <SectionDivider type="zigzag" backgroundColor="var(--bg-secondary)" />
+                  <Contact />
+                </>
+              }
+            />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+          </Routes>
+          <Footer />
+        </div>
+      </>
     </Router>
   );
 }

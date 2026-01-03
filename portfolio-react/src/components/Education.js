@@ -5,6 +5,21 @@ import { GraduationCap } from 'lucide-react';
 const Education = () => {
   const educationData = [
     {
+      period: "July 2025- Present",
+      institution: "Anexiums Company",
+      title: "Web Development",
+      subtitle: "Frontend Developer",
+      description: "Designing responsive and visually appealing interfaces."
+    },
+     {
+      period: "January 2025 - June 2025",
+      institution: "CAPVETS CCOMPANY LTD",
+      title: "IT Volunnter",
+      subtitle: "Volunteer",
+      description: "Carried out IT related tasks"
+    },
+
+    {
       period: "",
       institution: "Siantou University Institute, Yaounde",
       title: "College Education",

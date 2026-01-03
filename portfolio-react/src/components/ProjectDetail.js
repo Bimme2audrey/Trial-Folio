@@ -120,7 +120,35 @@ const ProjectDetail = () => {
         figma: "https://www.figma.com/design/fkG1Gl5bUFLLQ3SHJuc10D/cAuD?t=SiFStNvSWBYZf1Mh-0"
       },
       images: ["/images/Editor.png"]
-    }
+    },
+    6: {
+  title: "Company Official Website",
+  category: "Web Development",
+  image: "/images/Anexiums.png",
+  description: "Official company website with modern UI, dark/light theme, and fully responsive layout.",
+  fullDescription: "The official company website was built to represent the brand professionally online. It includes a modern design system, dark and light theme switching, responsive layouts for all devices, and optimized performance. The site focuses on clarity, accessibility, and user engagement.",
+  technologies: [
+    "React",
+    "CSS3",
+    "JavaScript",
+    "React Router",
+    "Context API"
+  ],
+  features: [
+    "Dark & Light theme toggle",
+    "Fully responsive design",
+    "SEO-friendly structure",
+    "Reusable component architecture",
+    "Optimized performance and accessibility"
+  ],
+  challenges: "Maintaining consistent branding across pages while implementing theme switching and ensuring responsiveness on all devices.",
+  links: {
+    live: "https://anexiums.com",
+    github: null,
+    figma: null
+  },
+  images: ["/images/Anexiums.png"]
+}
   };
 
   const project = projectsData[id];

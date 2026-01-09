@@ -6,14 +6,16 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+ useEffect(() => {
+  if (typeof window === 'undefined') return;
+  
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 50);
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);

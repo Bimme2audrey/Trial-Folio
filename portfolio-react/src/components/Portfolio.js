@@ -20,12 +20,6 @@ const Portfolio = () => {
         title: "Recipe Project",
         image: "/images/report-dashboard.jpg",
         description: "Recipe management system"
-      },
-       {
-        id: 6,
-        title: "Company Official Website",
-        image: "/images/Anexiums.png",
-        description: "Official website for Anexiums "
       }
     ],
     uiUx: [

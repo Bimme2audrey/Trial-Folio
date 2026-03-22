@@ -1,0 +1,121 @@
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.scroll-animation.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade In Up */
+.scroll-animation.fadeInUp.animate {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Fade In Left */
+.scroll-animation.fadeInLeft.animate {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+/* Fade In Right */
+.scroll-animation.fadeInRight.animate {
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+/* Fade In Scale */
+.scroll-animation.fadeInScale.animate {
+  animation: fadeInScale 0.8s ease forwards;
+}
+
+/* Slide In Up */
+.scroll-animation.slideInUp.animate {
+  animation: slideInUp 0.8s ease forwards;
+}
+
+/* Bounce In */
+.scroll-animation.bounceIn.animate {
+  animation: bounceIn 0.8s ease forwards;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Stagger animations for multiple children */
+.scroll-animation:nth-child(1) { animation-delay: 0.1s; }
+.scroll-animation:nth-child(2) { animation-delay: 0.2s; }
+.scroll-animation:nth-child(3) { animation-delay: 0.3s; }
+.scroll-animation:nth-child(4) { animation-delay: 0.4s; }
+.scroll-animation:nth-child(5) { animation-delay: 0.5s; }

@@ -29,7 +29,7 @@ const ProjectDetail = ({ projectId }) => {
       ],
       challenges: "Creating a professional and trustworthy online presence for a humanitarian organization while effectively communicating complex impact data and maintaining accessibility across diverse devices.",
       links: {
-        live: "https://danihf.vercel.app",
+        live: "https://danihf.org",
         github: null,
         figma: null
       },

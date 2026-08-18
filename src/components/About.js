@@ -19,11 +19,10 @@ const About = () => {
               <div className="col-left">
                 <div className="about-text">
                   <h3>
-                    I am Bimme Audrey Zun, a Junior Frontend Web Developer, based in Yaounde-Cameroon.
+                    I am Bimme Audrey Zun, a Frontend Web Developer based in Yaounde, Cameroon.
                   </h3>
                   <p>
-                    This is a practice project of mine, putting into practice what I've learned for the time being. 
-                    Open to learn, so as to grow and improve my skills. Thank you!
+                    I build responsive, user-focused interfaces with React and Next.js, turning design ideas into polished web experiences that feel intuitive, modern, and conversion-ready.
                   </p>
                   
                   <div className="contact-info">
@@ -33,7 +32,7 @@ const About = () => {
                     </div>
                     <div className="info-item">
                       <h4><Mail className="icon" /> Email</h4>
-                      <p>bimmedev@gmail.com</p>
+                      <p>audreybimme@gmail.com</p>
                     </div>
                     <div className="info-item">
                       <h4><BookOpen className="icon" /> Blog</h4>

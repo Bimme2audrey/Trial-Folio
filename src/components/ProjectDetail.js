@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, ExternalLink, Github, Globe } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Figma, Github, Globe } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useRouter } from 'next/navigation';
 import './ProjectDetail.css';
@@ -9,78 +9,127 @@ const ProjectDetail = ({ projectId }) => {
   const router = useRouter();
   const id = projectId;
 
-  // Extended project data with full details
   const projectsData = {
     1: {
-      title: "DANIHF Foundation",
-      category: "Web Development",
-      image: "/images/danihf.png",
-      description: "Humanitarian foundation website with impact tracking and project management",
-      fullDescription: "A comprehensive humanitarian foundation website featuring multiple sections including about, impact tracking, projects showcase, gallery, and contact. The site includes testimonials, mission/vision statements, and detailed project information with a focus on community transformation across Cameroon.",
-      technologies: ["React", "Next.js", "JavaScript", "CSS3", "Responsive Design"],
+      title: 'DANIHF Foundation',
+      category: 'Non-profit Website',
+      image: '/images/danihf.png',
+      description: 'Humanitarian foundation website with impact tracking and project management.',
+      fullDescription: 'A powerful humanitarian website designed to raise trust, highlight community impact, and guide visitors toward meaningful engagement. It combines storytelling, measurable outcomes, and clear calls to action to support a mission-driven organization.',
+      technologies: ['React', 'Next.js', 'JavaScript', 'CSS3', 'Responsive Design'],
       features: [
-        "Multi-page navigation with smooth scrolling",
-        "Impact tracking and statistics display",
-        "Project showcase with detailed descriptions",
-        "Testimonials section with client feedback",
-        "Gallery for visual content",
-        "Contact form and information",
-        "Mobile-responsive design"
+        'Multi-section storytelling for mission and impact',
+        'Impact stats and campaign highlights',
+        'Project showcase and gallery layout',
+        'Volunteer and contact engagement paths',
+        'Mobile-first accessible experience'
       ],
-      challenges: "Creating a professional and trustworthy online presence for a humanitarian organization while effectively communicating complex impact data and maintaining accessibility across diverse devices.",
+      challenges: 'The site needed to balance emotional storytelling with credibility and clarity, especially when presenting complex humanitarian work to diverse audiences across devices.',
       links: {
-        live: "https://danihf.org",
+        live: 'https://danihf.org',
         github: null,
         figma: null
       },
-      images: ["/images/danihf.png"]
+      images: ['/images/danihf.png'],
+      gradient: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)',
+      initials: 'DF'
     },
     2: {
-      title: "CAPVETS Ordering",
-      category: "Web Development",
-      image: "/images/capvets-ordering.png",
-      description: "Food ordering system with modern UI and seamless checkout",
-      fullDescription: "A farm-fresh food ordering platform connecting customers directly with agricultural products. Features product gallery, same-day delivery, and streamlined checkout process. Emphasizes farm-to-table freshness with no middlemen, ensuring better prices and quality for customers.",
-      technologies: ["React", "Next.js", "JavaScript", "CSS3", "State Management"],
+      title: 'CAPVETS Ordering',
+      category: 'E-commerce Experience',
+      image: '/images/Ordering_System.png',
+      description: 'Farm-fresh food ordering platform with direct-to-consumer flow and strong UX.',
+      fullDescription: 'This ordering experience was designed to simplify the buying journey for fresh agricultural products, reducing friction while creating a more premium shopping feel. The interface emphasizes clarity, trust, and a quick path to conversion.',
+      technologies: ['React', 'Next.js', 'JavaScript', 'CSS3', 'UI Systems'],
       features: [
-        "Interactive menu navigation",
-        "Visual product showcase",
-        "Streamlined checkout process",
-        "Mobile-first design approach",
-        "Order tracking system",
-        "Responsive layout"
+        'Product-focused visual merchandising',
+        'Simplified cart and checkout flow',
+        'Conversion-oriented layout and hierarchy',
+        'Responsive ordering experience',
+        'Clear product presentation for freshness and trust'
       ],
-      challenges: "Creating an intuitive ordering system that balances visual appeal with functionality while ensuring the process is simple enough for all user demographics.",
+      challenges: 'The biggest challenge was turning a complex ordering flow into something intuitive and reassuring for users who want to shop quickly without losing confidence in product quality.',
       links: {
-        live: "https://capvets-ordering.vercel.app",
+        live: 'https://ordering.capvets.com',
         github: null,
         figma: null
       },
-      images: ["/images/capvets-ordering.png"]
+      images: ['/images/Ordering_System.png'],
+      gradient: 'linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%)',
+      initials: 'CO'
     },
     3: {
-      title: "CAPVETS Company",
-      category: "Web Development",
-      image: "/images/capvets.png",
-      description: "Agricultural services company website with consultation booking",
-      fullDescription: "Professional agricultural services company website showcasing livestock production, crop cultivation, veterinary care, and agricultural training services. Features comprehensive service descriptions, client testimonials, and consultation booking functionality.",
-      technologies: ["React", "Next.js", "JavaScript", "CSS3", "Contact Forms"],
+      title: 'CAPVETS Company',
+      category: 'Business Website',
+      image: '/images/CAPVETS.png',
+      description: 'Agricultural services company website with consultation booking and trust-building content.',
+      fullDescription: 'A brand-forward business website built to help a company present its value clearly across livestock, crop, and veterinary services. The experience guides visitors toward service discovery and direct inquiries with a professional, modern design.',
+      technologies: ['React', 'Next.js', 'JavaScript', 'CSS3', 'Lead Generation'],
       features: [
-        "Service showcase with detailed descriptions",
-        "Client testimonials section",
-        "Contact and consultation booking",
-        "Professional business presentation",
-        "Mobile-responsive design",
-        "SEO-friendly structure"
+        'Professional service positioning',
+        'Consultation and contact funnels',
+        'Client trust and testimonial sections',
+        'Service discovery and industry storytelling',
+        'SEO-friendly structure'
       ],
-      challenges: "Creating a professional business website that effectively communicates complex agricultural services while maintaining user engagement and trust across diverse stakeholder groups.",
+      challenges: 'The goal was to communicate technical agricultural expertise in a way that felt approachable, credible, and conversion-ready for potential clients and partners.',
       links: {
-        live: "https://capvets.com",
+        live: 'https://capvets.com',
         github: null,
         figma: null
       },
-      images: ["/images/capvets.png"]
+      images: ['/images/CAPVETS.png'],
+      gradient: 'linear-gradient(135deg, #f59e0b 0%, #f97316 100%)',
+      initials: 'CC'
     },
+    4: {
+      title: 'CJ Visuals Productions',
+      category: 'Creative Studio',
+      image: null,
+      description: 'A cinematic creative brand website focused on premium visuals, storytelling, and strong conversion for service inquiries.',
+      fullDescription: 'This website builds an elevated visual identity for a production company, using a cinematic aesthetic and polished messaging strategy to attract clients who value premium creative work. The layout emphasizes storytelling, confidence, and clear inquiry conversion.',
+      technologies: ['Next.js', 'Brand Design', 'Creative UX', 'Responsive Layout'],
+      features: [
+        'Cinematic brand storytelling',
+        'Service-focused conversion structure',
+        'High-impact visual pacing',
+        'Lead generation for creative inquiries',
+        'Elegant mobile experience'
+      ],
+      challenges: 'The challenge was balancing a premium creative feel with functional clarity so visitors immediately understand what the studio offers and how to contact them.',
+      links: {
+        live: 'https://www.cjvisualsproductions.com/',
+        github: null,
+        figma: null
+      },
+      images: [],
+      gradient: 'linear-gradient(135deg, #f43f5e 0%, #8b5cf6 100%)',
+      initials: 'CJ'
+    },
+    5: {
+      title: 'Anexiums',
+      category: 'Business Website',
+      image: null,
+      description: 'A polished digital presence designed to elevate a modern business brand with clarity, trust, and confidence-building content.',
+      fullDescription: 'Anexiums needed a cleaner and more premium online presence that instantaneously communicated professionalism and credibility. The result is a streamlined experience built around clarity, trust, and business-focused user flow.',
+      technologies: ['Next.js', 'UX Strategy', 'Responsive Design', 'Brand Positioning'],
+      features: [
+        'Professional business storytelling',
+        'Trust-building content layout',
+        'Modern conversion-focused structure',
+        'Clear service communication',
+        'Responsive, premium presentation'
+      ],
+      challenges: 'The key challenge was helping the brand feel established, modern, and credible without overwhelming the visitor with too much complexity or clutter.',
+      links: {
+        live: 'https://anexiums.com/',
+        github: null,
+        figma: null
+      },
+      images: [],
+      gradient: 'linear-gradient(135deg, #0f172a 0%, #475569 100%)',
+      initials: 'AN'
+    }
   };
 
   const project = projectsData[id];
@@ -113,8 +162,17 @@ const ProjectDetail = ({ projectId }) => {
           <p className="project-tagline">{project.description}</p>
         </div>
 
-        <div className="project-image-main">
-          <img src={project.image} alt={project.title} />
+        <div
+          className={`project-image-main ${!project.image ? 'project-gradient-cover' : ''}`}
+          style={!project.image ? { background: project.gradient } : undefined}
+        >
+          {project.image ? (
+            <img src={project.image} alt={project.title} />
+          ) : (
+            <div className="project-hero-mark">
+              <span>{project.initials}</span>
+            </div>
+          )}
         </div>
 
         <div className="project-content">

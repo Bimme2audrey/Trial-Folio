@@ -41,7 +41,7 @@ const Work = () => {
     <section id="work" className="section work">
       <div className="container">
         <div className="section-head">
-          <span className="section-index mono">02 — Selected work</span>
+          <span className="section-index mono">03 — Selected work</span>
           <h2 className="section-title display reveal">Work</h2>
           <p className="section-lede reveal" style={{ '--d': '0.1s' }}>
             Interfaces for non-profits, agri-businesses and creative studios — built for clarity, trust and conversion.

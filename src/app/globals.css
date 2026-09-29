@@ -229,7 +229,7 @@ button {
    ───────────────────────────────────────────────────────────── */
 .section {
   position: relative;
-  padding: clamp(96px, 14vw, 180px) 0;
+  padding: clamp(56px, 7vw, 104px) 0;
 }
 
 .section-head {
@@ -237,7 +237,7 @@ button {
   grid-template-columns: auto 1fr;
   align-items: end;
   gap: 1rem 2.5rem;
-  margin-bottom: clamp(48px, 7vw, 96px);
+  margin-bottom: clamp(28px, 4vw, 56px);
 }
 
 .section-index {

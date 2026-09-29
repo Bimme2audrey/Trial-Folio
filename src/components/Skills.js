@@ -1,28 +1,31 @@
 import React from 'react';
+import { SiCss, SiGithub, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import { Lightbulb, MessagesSquare, Users } from 'lucide-react';
 import './Skills.css';
 
+// Brand colours light up on hover; 'ink' means the mark is black/white by design (Next.js, GitHub).
 const groups = [
   {
     title: 'Build',
     note: 'The stack I reach for every day.',
     keys: [
-      { name: 'HTML5', glyph: '<>' },
-      { name: 'CSS3 & Motion', glyph: '{}' },
-      { name: 'Tailwind CSS', glyph: '≈' },
-      { name: 'JavaScript', glyph: 'JS' },
-      { name: 'TypeScript', glyph: 'TS' },
-      { name: 'React', glyph: '⚛' },
-      { name: 'Next.js', glyph: 'N' },
-      { name: 'Git & GitHub', glyph: '⎇' },
+      { name: 'HTML5', Icon: SiHtml5, color: '#E34F26' },
+      { name: 'CSS3 & Motion', Icon: SiCss, color: '#663399' },
+      { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06B6D4' },
+      { name: 'JavaScript', Icon: SiJavascript, color: '#E8C800' },
+      { name: 'TypeScript', Icon: SiTypescript, color: '#3178C6' },
+      { name: 'React', Icon: SiReact, color: '#1FA8D1' },
+      { name: 'Next.js', Icon: SiNextdotjs, color: 'var(--ink)' },
+      { name: 'Git & GitHub', Icon: SiGithub, color: 'var(--ink)' },
     ],
   },
   {
     title: 'Work',
     note: 'How I show up on a team.',
     keys: [
-      { name: 'Creativity', glyph: '✦' },
-      { name: 'Communication', glyph: '◎' },
-      { name: 'Team Work', glyph: '⁂' },
+      { name: 'Creativity', Icon: Lightbulb, color: 'var(--accent)' },
+      { name: 'Communication', Icon: MessagesSquare, color: 'var(--accent)' },
+      { name: 'Team Work', Icon: Users, color: 'var(--accent)' },
     ],
   },
 ];
@@ -32,7 +35,7 @@ const Skills = () => {
     <section id="skills" className="section skills">
       <div className="container">
         <div className="section-head">
-          <span className="section-index mono">03 — Skills</span>
+          <span className="section-index mono">02 — Skills</span>
           <h2 className="section-title display reveal">Toolkit</h2>
           <p className="section-lede reveal" style={{ '--d': '0.1s' }}>
             Press a key. Tactile is kind of my thing.
@@ -49,10 +52,8 @@ const Skills = () => {
               <ul className="skills-keys nm-in">
                 {g.keys.map((k) => (
                   <li key={k.name}>
-                    <button type="button" className="skill-key">
-                      <span className="skill-glyph display" aria-hidden="true">
-                        {k.glyph}
-                      </span>
+                    <button type="button" className="skill-key" style={{ '--brand': k.color }}>
+                      <k.Icon className="skill-icon" aria-hidden="true" />
                       <span className="skill-name">{k.name}</span>
                     </button>
                   </li>

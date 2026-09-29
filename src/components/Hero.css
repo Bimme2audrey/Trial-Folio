@@ -1,8 +1,8 @@
 /* Tall section + sticky stage: the extra height is the scroll "track" that spins the object */
 .hero {
   position: relative;
-  height: 210vh;
-  height: 210svh;
+  height: 170vh;
+  height: 170svh;
 }
 
 .hero-sticky {

@@ -16,9 +16,9 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Skills />
         <Work />
         <Marquee />
-        <Skills />
         <Experience />
         <Contact />
       </main>

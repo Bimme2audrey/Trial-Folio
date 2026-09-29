@@ -1,7 +1,13 @@
 import React from 'react';
-import { ArrowUpRight, Mail, MapPin, Phone, PenLine } from 'lucide-react';
+import { AppWindow, ArrowUpRight, CodeXml, PenLine, PenTool } from 'lucide-react';
 import { profile } from '../data/projects';
 import './About.css';
+
+const disciplines = [
+  { title: 'Frontend Development', detail: 'React · Next.js · TypeScript', Icon: CodeXml },
+  { title: 'Interface Design', detail: 'Responsive UI · Interaction · Motion', Icon: PenTool },
+  { title: 'Digital Experiences', detail: 'Websites · E-commerce · Web Applications', Icon: AppWindow },
+];
 
 const About = () => {
   return (
@@ -27,33 +33,29 @@ const About = () => {
             </p>
           </div>
 
-          <aside className="about-card nm reveal" style={{ '--d': '0.15s' }} aria-label="Contact details">
+          <aside className="about-card nm reveal" style={{ '--d': '0.15s' }} aria-label="What I do">
             <div className="about-monogram" aria-hidden="true">
               <span className="display emboss">BA</span>
             </div>
 
             <ul className="about-facts">
-              <li>
-                <MapPin size={18} />
-                <span className="mono">Based in</span>
-                <span>{profile.location}</span>
-              </li>
-              <li>
-                <Mail size={18} />
-                <span className="mono">Email</span>
-                <a href={`mailto:${profile.email}`}>{profile.email}</a>
-              </li>
-              <li>
-                <Phone size={18} />
-                <span className="mono">Phone</span>
-                <a href={`tel:${profile.phone.replace(/\s/g, '')}`}>{profile.phone}</a>
-              </li>
+              {disciplines.map(({ title, detail, Icon }) => (
+                <li key={title}>
+                  <Icon size={18} />
+                  <span className="about-discipline">
+                    <strong>{title}</strong>
+                    <span className="mono">{detail}</span>
+                  </span>
+                </li>
+              ))}
               <li>
                 <PenLine size={18} />
-                <span className="mono">Writing</span>
-                <a href={profile.blog} target="_blank" rel="noopener noreferrer">
-                  Bimme&apos;s Space
-                </a>
+                <span className="about-discipline">
+                  <strong>Writing</strong>
+                  <a href={profile.blog} target="_blank" rel="noopener noreferrer" className="mono">
+                    Bimme&apos;s Space <ArrowUpRight size={12} />
+                  </a>
+                </span>
               </li>
             </ul>
 

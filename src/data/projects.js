@@ -6,23 +6,27 @@ export const projects = [
     logo: '/logos/ordering.png',
     mark: 'CAPVETS',
     markSub: 'Ordering',
-    category: 'E-commerce Experience',
+    category: 'Full-stack e-commerce',
     year: '2025',
     image: '/images/Ordering_System.png',
     hue: 142,
     description: 'Farm-fresh food ordering platform with direct-to-consumer flow and strong UX.',
-    fullDescription:
-      'This ordering experience was designed to simplify the buying journey for fresh agricultural products, reducing friction while creating a more premium shopping feel. The interface emphasizes clarity, trust, and a quick path to conversion.',
+    featured: true, // gets the large case-study card at the top of Work
+    headline: 'Making fresh-produce ordering quick and trustworthy',
+    problem:
+      'Buying fresh agricultural products online asks for a lot of trust. The ordering flow was complex, and shoppers needed to move fast without losing confidence in the quality of what they were buying.',
+    approach:
+      'I built it end to end. On the front, a product-first storefront with freshness-focused presentation, a simplified cart and a shorter, mobile-first checkout. Behind it, the server side that receives, stores and manages every order.',
+    result:
+      'A live direct-to-consumer ordering platform, from storefront to order data, that takes shoppers from browsing to a placed order in a short, reassuring path on any screen.',
     technologies: ['React', 'Next.js', 'JavaScript', 'CSS3', 'UI Systems'],
     features: [
-      'Product-focused visual merchandising',
+      'Product-focused storefront built for freshness and trust',
       'Simplified cart and checkout flow',
+      'Server-side order capture and management',
       'Conversion-oriented layout and hierarchy',
-      'Responsive ordering experience',
-      'Clear product presentation for freshness and trust',
+      'Responsive ordering experience on any device',
     ],
-    challenges:
-      'The biggest challenge was turning a complex ordering flow into something intuitive and reassuring for users who want to shop quickly without losing confidence in product quality.',
     links: { live: 'https://ordering.capvets.com', github: null, figma: null },
   },
   {
@@ -30,13 +34,18 @@ export const projects = [
     title: 'CAPVETS Company',
     logo: '/logos/capvets.webp',
     mark: 'CAPVETS',
-    category: 'Business Website',
+    category: 'Full-stack business site',
     year: '2025',
     image: '/images/CAPVETS.png',
     hue: 46,
     description: 'Agricultural services company website with consultation booking and trust-building content.',
-    fullDescription:
-      'A brand-forward business website built to help a company present its value clearly across livestock, crop, and veterinary services. The experience guides visitors toward service discovery and direct inquiries with a professional, modern design.',
+    headline: 'Making technical agri-services easy to understand',
+    problem:
+      'Livestock, crop and veterinary expertise is hard to grasp at a glance, so potential clients and partners struggled to see what the company offered and why they should trust it.',
+    approach:
+      'I organised the site around service discovery and storytelling, added trust signals like testimonials, and built consultation and contact funnels end to end, from the forms to the server side that handles each request, on an SEO-friendly structure.',
+    result:
+      'An approachable, credible company site that explains the services plainly and guides visitors toward booking a consultation.',
     technologies: ['React', 'Next.js', 'JavaScript', 'CSS3', 'Lead Generation'],
     features: [
       'Professional service positioning',
@@ -45,8 +54,6 @@ export const projects = [
       'Service discovery and industry storytelling',
       'SEO-friendly structure',
     ],
-    challenges:
-      'The goal was to communicate technical agricultural expertise in a way that felt approachable, credible, and conversion-ready for potential clients and partners.',
     links: { live: 'https://capvets.com', github: null, figma: null },
   },
   {
@@ -55,14 +62,18 @@ export const projects = [
     logo: '/logos/cj-visuals.png',
     logoMono: true, // single-colour mark: tinted to match the theme
     mark: 'CJ Visuals',
-    category: 'Creative Studio',
+    category: 'Full-stack studio site',
     year: '2025',
     image: null,
     hue: 40,
     description:
       'A cinematic creative brand website focused on premium visuals, storytelling, and strong conversion for service inquiries.',
-    fullDescription:
-      'This website builds an elevated visual identity for a production company, using a cinematic aesthetic and polished messaging strategy to attract clients who value premium creative work. The layout emphasizes storytelling, confidence, and clear inquiry conversion.',
+    headline: 'Selling a premium studio without losing clarity',
+    problem:
+      'A production studio needed to feel cinematic and premium online, without leaving visitors unsure what it offers or how to hire it.',
+    approach:
+      'I paired cinematic visual pacing with a service-focused structure, so the storytelling leads straight into inquiry paths that are handled server-side, all tuned for mobile.',
+    result: "A brand site that shows off the studio's creative quality and turns that interest into service inquiries.",
     technologies: ['Next.js', 'Brand Design', 'Creative UX', 'Responsive Layout'],
     features: [
       'Cinematic brand storytelling',
@@ -71,8 +82,6 @@ export const projects = [
       'Lead generation for creative inquiries',
       'Elegant mobile experience',
     ],
-    challenges:
-      'The challenge was balancing a premium creative feel with functional clarity so visitors immediately understand what the studio offers and how to contact them.',
     links: { live: 'https://www.cjvisualsproductions.com/', github: null, figma: null },
   },
   {
@@ -80,14 +89,18 @@ export const projects = [
     title: 'Anexiums',
     logo: null,
     mark: 'Anexiums',
-    category: 'Business Website',
+    category: 'Full-stack business site',
     year: '2025',
     image: null,
     hue: 220,
     description:
       'A polished digital presence designed to elevate a modern business brand with clarity, trust, and confidence-building content.',
-    fullDescription:
-      'Anexiums needed a cleaner and more premium online presence that instantaneously communicated professionalism and credibility. The result is a streamlined experience built around clarity, trust, and business-focused user flow.',
+    headline: 'Looking established without the clutter',
+    problem:
+      'The business needed to come across as established and credible online, but piling on content risked overwhelming visitors.',
+    approach:
+      'I streamlined the content into a clear, trust-building flow with focused service messaging, and built it front to back on a modern, responsive stack.',
+    result: 'A cleaner, more premium presence that communicates professionalism from the first screen.',
     technologies: ['Next.js', 'UX Strategy', 'Responsive Design', 'Brand Positioning'],
     features: [
       'Professional business storytelling',
@@ -96,8 +109,6 @@ export const projects = [
       'Clear service communication',
       'Responsive, premium presentation',
     ],
-    challenges:
-      'The key challenge was helping the brand feel established, modern, and credible without overwhelming the visitor with too much complexity or clutter.',
     links: { live: 'https://anexiums.com/', github: null, figma: null },
   },
   {
@@ -105,13 +116,17 @@ export const projects = [
     title: 'DANIHF Foundation',
     logo: '/logos/danihf.png',
     mark: 'DANIHF',
-    category: 'Non-profit Website',
+    category: 'Full-stack non-profit site',
     year: '2025',
     image: '/images/danihf.png',
     hue: 148,
     description: 'Humanitarian foundation website with impact tracking and project management.',
-    fullDescription:
-      'A powerful humanitarian website designed to raise trust, highlight community impact, and guide visitors toward meaningful engagement. It combines storytelling, measurable outcomes, and clear calls to action to support a mission-driven organization.',
+    headline: 'Turning humanitarian work into trust and action',
+    problem:
+      'A humanitarian foundation had to present complex community work to very different audiences, balancing emotional storytelling with credibility.',
+    approach:
+      'I built multi-section storytelling around mission and impact, backed by a server side that manages projects and impact figures, with clear volunteer and contact paths, mobile-first and accessible.',
+    result: "A site that builds trust in the foundation's work and gives every visitor a clear way to get involved.",
     technologies: ['React', 'Next.js', 'JavaScript', 'CSS3', 'Responsive Design'],
     features: [
       'Multi-section storytelling for mission and impact',
@@ -120,8 +135,6 @@ export const projects = [
       'Volunteer and contact engagement paths',
       'Mobile-first accessible experience',
     ],
-    challenges:
-      'The site needed to balance emotional storytelling with credibility and clarity, especially when presenting complex humanitarian work to diverse audiences across devices.',
     links: { live: 'https://danihf.org', github: null, figma: null },
   },
 ];

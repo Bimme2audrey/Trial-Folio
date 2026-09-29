@@ -65,18 +65,17 @@
   background: var(--surface);
 }
 
-/* Icons sit embossed into the key, then light up in their brand colour */
+/* Icons wear their brand colour with a soft emboss; hover lifts them and adds a glow */
 .skill-icon {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  color: var(--bg);
-  filter: drop-shadow(-1px -1px 1px var(--nm-light)) drop-shadow(1.5px 1.5px 1.5px var(--nm-dark));
-  transition: color 0.3s var(--ease-out), filter 0.3s var(--ease-out), transform 0.5s var(--ease-spring);
+  color: var(--brand);
+  filter: drop-shadow(-1px -1px 1px var(--nm-light)) drop-shadow(1px 1.5px 1.5px var(--nm-dark));
+  transition: filter 0.3s var(--ease-out), transform 0.5s var(--ease-spring);
 }
 .skill-key:hover .skill-icon,
 .skill-key:focus-visible .skill-icon {
-  color: var(--brand);
   filter: drop-shadow(0 4px 10px color-mix(in srgb, var(--brand) 35%, transparent));
   transform: translateY(-2px) scale(1.06);
 }

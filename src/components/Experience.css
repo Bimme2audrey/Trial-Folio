@@ -80,7 +80,26 @@
   max-width: 62ch;
 }
 
+/* Education: a quiet footnote rather than another card */
+.xp-education {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin: clamp(32px, 4vw, 48px) 0 0 calc(180px + 44px);
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-mute);
+  font-size: 0.95rem;
+}
+.xp-education .mono {
+  font-size: 0.68rem;
+  padding-top: 0.2rem;
+}
+
 @media (max-width: 760px) {
+  .xp-education {
+    margin-left: 36px;
+  }
   .xp-list::before {
     left: 9px;
   }

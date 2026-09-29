@@ -331,7 +331,7 @@ export default function Hero() {
         </div>
 
         <p className="hero-tagline">
-          I build <em>soft, tactile</em> interfaces with React &amp; Next.js — websites that feel as good as they look.
+          I build <em>soft, tactile</em> interfaces with React &amp; Next.js ~ responsive digital interfaces that feel as good as they look.
         </p>
       </div>
 

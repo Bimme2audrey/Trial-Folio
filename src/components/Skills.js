@@ -1,9 +1,9 @@
 import React from 'react';
 import { SiCss, SiGithub, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiTailwindcss, SiTypescript } from 'react-icons/si';
-import { Lightbulb, MessagesSquare, Users } from 'lucide-react';
+import { Component, Compass, MonitorSmartphone, SwatchBook } from 'lucide-react';
 import './Skills.css';
 
-// Brand colours light up on hover; 'ink' means the mark is black/white by design (Next.js, GitHub).
+// Each key wears its brand colour; 'ink' means the mark is black/white by design (Next.js, GitHub).
 const groups = [
   {
     title: 'Build',
@@ -20,12 +20,13 @@ const groups = [
     ],
   },
   {
-    title: 'Work',
-    note: 'How I show up on a team.',
+    title: 'Approach',
+    note: 'How I think about interfaces.',
     keys: [
-      { name: 'Creativity', Icon: Lightbulb, color: 'var(--accent)' },
-      { name: 'Communication', Icon: MessagesSquare, color: 'var(--accent)' },
-      { name: 'Team Work', Icon: Users, color: 'var(--accent)' },
+      { name: 'Responsive thinking', Icon: MonitorSmartphone, color: 'var(--accent)' },
+      { name: 'UX thinking', Icon: Compass, color: 'var(--accent)' },
+      { name: 'Component architecture', Icon: Component, color: 'var(--accent)' },
+      { name: 'Design systems', Icon: SwatchBook, color: 'var(--accent)' },
     ],
   },
 ];

@@ -27,12 +27,6 @@ const timeline = [
     role: 'Student Intern · Web Development',
     note: 'First hands-on steps into professional web development.',
   },
-  {
-    period: 'Education',
-    place: 'Siantou University Institute, Yaoundé',
-    role: 'Computer Science',
-    note: 'Studied computer science with a specialisation in web development.',
-  },
 ];
 
 const Experience = () => {
@@ -43,7 +37,7 @@ const Experience = () => {
           <span className="section-index mono">04 — Experience</span>
           <h2 className="section-title display reveal">Path</h2>
           <p className="section-lede reveal" style={{ '--d': '0.1s' }}>
-            Where I&apos;ve worked, studied and learned to ship.
+            Where I&apos;ve worked and learned to ship.
           </p>
         </div>
 
@@ -60,6 +54,11 @@ const Experience = () => {
             </li>
           ))}
         </ol>
+
+        <p className="xp-education reveal">
+          <span className="mono">Education</span>
+          Computer Science, web development track · Siantou University Institute, Yaoundé
+        </p>
       </div>
     </section>
   );

@@ -8,6 +8,108 @@
   text-underline-offset: 4px;
 }
 
+/* Flagship case study: problem → approach → result */
+.work-feature {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  grid-template-areas:
+    'head visual'
+    'story visual'
+    'actions visual';
+  gap: clamp(22px, 3vw, 36px) clamp(28px, 4vw, 56px);
+  padding: clamp(22px, 4vw, 52px);
+  margin-bottom: clamp(56px, 8vw, 104px);
+}
+.work-feature-head {
+  grid-area: head;
+}
+.work-feature-label {
+  color: var(--ink-mute);
+}
+.work-feature-title {
+  margin: 0.9rem 0 0.6rem;
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.work-feature-headline {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.work-feature-visual {
+  grid-area: visual;
+  position: relative;
+  min-height: 320px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.work-feature-visual .plogo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.work-feature-story {
+  grid-area: story;
+  margin: 0;
+  display: grid;
+  gap: 1.3rem;
+}
+.work-story-step {
+  display: grid;
+  gap: 0.35rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--line);
+}
+.work-story-step:last-child {
+  border-left-color: var(--accent);
+}
+.work-story-step dt {
+  color: var(--ink-mute);
+}
+.work-story-step dt span {
+  color: var(--accent);
+  margin-right: 0.4em;
+}
+.work-story-step dd {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+.work-story-step:last-child dd {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.work-feature-actions {
+  grid-area: actions;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.work-more {
+  margin: 0 0 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ink-mute);
+}
+
+@media (max-width: 900px) {
+  .work-feature {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'head' 'visual' 'story' 'actions';
+  }
+  .work-feature-visual {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+}
+
 .work-list {
   list-style: none;
   margin: 0;
@@ -33,6 +135,16 @@
 
 .work-num {
   color: var(--ink-mute);
+}
+.work-heading {
+  display: grid;
+  gap: 0.55rem;
+  min-width: 0;
+}
+.work-problem {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.4;
 }
 .work-title {
   min-width: 0;
@@ -133,9 +245,11 @@
     grid-row: 1;
     align-self: center;
   }
-  .work-title {
+  .work-heading {
     grid-column: 1 / -1;
     grid-row: 2;
+  }
+  .work-title {
     font-size: clamp(1.5rem, 7vw, 2.4rem);
   }
   .work-meta {

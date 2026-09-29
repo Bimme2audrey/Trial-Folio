@@ -60,12 +60,13 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId }) => {
       <div className="pd-body container">
         <article className="pd-main">
           <section>
-            <h2 className="mono">About the project</h2>
-            <p className="pd-lead">{project.fullDescription}</p>
+            <h2 className="mono">The problem</h2>
+            <p className="pd-lead">{project.problem}</p>
           </section>
 
           <section>
-            <h2 className="mono">Key features</h2>
+            <h2 className="mono">My approach</h2>
+            <p>{project.approach}</p>
             <ol className="pd-features">
               {project.features.map((f) => (
                 <li key={f}>{f}</li>
@@ -74,8 +75,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId }) => {
           </section>
 
           <section>
-            <h2 className="mono">Challenge &amp; approach</h2>
-            <p>{project.challenges}</p>
+            <h2 className="mono">The result</h2>
+            <p>{project.result}</p>
           </section>
 
           {project.image && (

@@ -1,74 +1,75 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Syne, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../context/ThemeContext";
 import SEOHead from "../components/SEOHead";
+import { profile } from "../data/projects";
+
+const display = Syne({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-display" });
+const body = Manrope({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-body" });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono" });
+
+// Runs before paint so the saved theme never flashes the wrong palette.
+const themeScript = `try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark-theme')}catch(e){}`;
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#e4e5ec" },
+    { media: "(prefers-color-scheme: dark)", color: "#1c1d23" },
+  ],
+};
+
+const SITE = profile.url;
+const TITLE = 'Bimme Audrey Zun — Frontend Developer in Yaoundé, Cameroon';
+const DESCRIPTION =
+  'Bimme Audrey Zun is a frontend web developer in Yaoundé, Cameroon, building fast, responsive websites with React and Next.js. Selected work: DANIHF, CAPVETS, CJ Visuals and Anexiums.';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE),
   title: {
-    default: "Bimme Audrey || Frontend Developer",
-    template: "%s | Bimme Audrey"
+    default: TITLE,
+    template: '%s — Bimme Audrey Zun',
   },
-  description: "Bimme Audrey - Frontend Web Developer specializing in React, Next.js, and modern web technologies. Explore my portfolio of responsive websites, UI/UX designs, and innovative web applications.",
+  description: DESCRIPTION,
+  applicationName: 'Bimme Audrey Zun',
   keywords: [
-    "Bimme Audrey",
-    "Frontend Developer in Cameroon",
-    "Web Developer in Cameroon",
-    "React Developer in Cameroon",
-    "Next.js Developer in Cameroon",
-    "Responsive Web Design in Cameroon",
-    "JavaScript Developer in Cameroon",
-    "Cameroon Female Developer"
+    'Bimme Audrey Zun',
+    'Bimme Audrey',
+    'Audrey Bimme',
+    'Bimme',
+    'Frontend Developer Cameroon',
+    'Web Developer Yaoundé',
+    'React Developer Cameroon',
+    'Next.js Developer Cameroon',
   ],
-  authors: [{ name: "Bimme Audrey", url: "https://bimmeaudrey.vercel.app" }],
-  creator: "Bimme Audrey",
-  publisher: "Bimme Audrey",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://bimmeaudrey.vercel.app"),
-  alternates: {
-    canonical: "/",
-  },
+  authors: [{ name: 'Bimme Audrey Zun', url: SITE }],
+  creator: 'Bimme Audrey Zun',
+  publisher: 'Bimme Audrey Zun',
+  formatDetection: { email: false, address: false, telephone: false },
+  alternates: { canonical: '/' },
   openGraph: {
-    title: "Bimme Audrey || Frontend Developer",
-    description: "Frontend Web Developer specializing in React, Next.js, and modern web technologies. Explore my portfolio of responsive websites and innovative web applications.",
-    url: "https://bimmeaudrey.vercel.app",
-    siteName: "Bimme Audrey Portfolio",
-    locale: "en_US",
-    type: "website",
-    images: [
-      {
-        url: "/favicon.ico",
-        width: 32,
-        height: 32,
-        alt: "Bimme Audrey - Frontend Developer",
-      },
-    ],
+    type: 'profile',
+    firstName: 'Bimme Audrey',
+    lastName: 'Zun',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE,
+    siteName: 'Bimme Audrey Zun',
+    locale: 'en_US',
   },
   twitter: {
-    card: "summary",
-    title: "Bimme Audrey || Frontend Developer",
-    description: "Frontend Web Developer specializing in React, Next.js, and modern web technologies.",
-    images: ["/favicon.ico"],
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    creator: '@small_bimme',
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+    googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
-  },
+  // Set GOOGLE_SITE_VERIFICATION in Vercel to the code from Google Search Console's "HTML tag" method.
+  verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
 };
 
 export default function RootLayout({
@@ -77,8 +78,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <SEOHead />
       </head>
       <body>

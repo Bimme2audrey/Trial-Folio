@@ -1,8 +1,8 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useSyncExternalStore } from 'react';
 
-const ThemeContext = createContext();
+const ThemeContext = createContext(null);
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
@@ -12,54 +12,26 @@ export const useTheme = () => {
   return context;
 };
 
+// The inline script in layout.tsx applies the saved theme before paint, so the
+// <html> class is the source of truth; React just subscribes to it.
+const subscribe = (onChange) => {
+  const mo = new MutationObserver(onChange);
+  mo.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+  return () => mo.disconnect();
+};
+const getSnapshot = () => document.documentElement.classList.contains('dark-theme');
+const getServerSnapshot = () => false;
+
 export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const shouldBeDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-
-    setIsDark(shouldBeDark);
-
-    if (shouldBeDark) {
-      document.documentElement.classList.add('dark-theme');
-    } else {
-      document.documentElement.classList.remove('dark-theme');
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!isMounted) return;
-
-    const root = document.documentElement;
-    if (isDark) {
-      root.classList.add('dark-theme');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      root.classList.remove('dark-theme');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDark, isMounted]);
+  const isDark = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
+    const next = !isDark;
+    document.documentElement.classList.toggle('dark-theme', next);
+    try {
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+    } catch {}
   };
 
-  // Prevent hydration mismatch by not rendering theme-dependent UI until mounted
-  if (!isMounted) {
-    return (
-      <ThemeContext.Provider value={{ isDark: false, toggleTheme }}>
-        {children}
-      </ThemeContext.Provider>
-    );
-  }
-
-  return (
-    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ isDark, toggleTheme }}>{children}</ThemeContext.Provider>;
 };

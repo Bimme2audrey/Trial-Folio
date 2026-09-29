@@ -1,49 +1,25 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import './ThemeToggle.css';
 
 const ThemeToggle = () => {
   const { isDark, toggleTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  // Don't render theme-dependent content until mounted
-  if (!isMounted) {
-    return (
-      <button
-        className="theme-toggle"
-        onClick={toggleTheme}
-        aria-label="Switch theme"
-      >
-        <div className="toggle-track">
-          <div className="toggle-thumb">
-            <span className="moon-icon">🌙</span>
-          </div>
-        </div>
-      </button>
-    );
-  }
 
   return (
     <button
-      className="theme-toggle"
+      type="button"
+      className="theme-toggle nm-btn"
       onClick={toggleTheme}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+      aria-pressed={isDark}
     >
-      <div className="toggle-track">
-        <div className="toggle-thumb">
-          {isDark ? (
-            <span className="sun-icon">☀️</span>
-          ) : (
-            <span className="moon-icon">🌙</span>
-          )}
-        </div>
-      </div>
+      <span className="theme-icons" data-dark={isDark}>
+        <Sun size={18} />
+        <Moon size={18} />
+      </span>
     </button>
   );
 };

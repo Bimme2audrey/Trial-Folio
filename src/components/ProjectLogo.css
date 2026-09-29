@@ -1,0 +1,92 @@
+.plogo {
+  --brand: hsl(var(--h) 62% 34%);
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--nm-in-sm);
+  container-type: inline-size;
+}
+html.dark-theme .plogo {
+  --brand: hsl(var(--h) 70% 62%);
+}
+
+/* Faint brand-hued halo that wakes up on hover */
+.plogo::before {
+  content: '';
+  position: absolute;
+  inset: 20%;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(var(--h) 80% 55% / 0.22), transparent 70%);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.6s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.plogo-img {
+  position: relative;
+  width: 62%;
+  height: 62%;
+  transition: transform 0.8s var(--ease-spring);
+}
+.plogo-img img {
+  object-fit: contain;
+}
+
+.plogo-mask {
+  position: relative;
+  width: 58%;
+  height: 64%;
+  background: var(--ink);
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
+  opacity: 0.82;
+  transition: background-color 0.5s var(--ease-out), opacity 0.5s, transform 0.8s var(--ease-spring);
+}
+
+.plogo-word {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  padding: 0 8%;
+  text-align: center;
+  color: var(--ink);
+  transition: color 0.5s var(--ease-out), transform 0.8s var(--ease-spring);
+}
+.plogo-word .display {
+  font-size: clamp(1.4rem, 13cqw, 4.5rem);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+.plogo-word .mono {
+  font-size: clamp(0.6rem, 3cqw, 0.9rem);
+  letter-spacing: 0.5em;
+  margin-right: -0.5em;
+  color: var(--ink-mute);
+}
+
+:is(a:hover, .is-hovered, .is-active) > .plogo .plogo-img,
+.plogo:hover .plogo-img {
+  transform: scale(1.06);
+}
+
+/* Hover states — any ancestor can opt in with .is-hovered, or plain :hover */
+:is(a:hover, .is-hovered, .is-active) > .plogo::before,
+.plogo:hover::before {
+  opacity: 1;
+  transform: none;
+}
+:is(a:hover, .is-hovered, .is-active) > .plogo .plogo-mask,
+.plogo:hover .plogo-mask {
+  background-color: var(--brand);
+  opacity: 1;
+  transform: scale(1.05);
+}
+:is(a:hover, .is-hovered, .is-active) > .plogo .plogo-word,
+.plogo:hover .plogo-word {
+  color: var(--brand);
+  transform: scale(1.04);
+}

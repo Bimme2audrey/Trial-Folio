@@ -1,77 +1,70 @@
 import React from 'react';
+import { ArrowUpRight, Mail, MapPin, Phone, PenLine } from 'lucide-react';
+import { profile } from '../data/projects';
 import './About.css';
-import ScrollAnimation from './ScrollAnimation';
-import {Camera, Image, Phone, Mail, BookOpen, Linkedin, Github } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="about">
+    <section id="about" className="section about">
       <div className="container">
-        <ScrollAnimation animation="fadeInUp" delay={0.2}>
-          <div className="section-heading">
-            <h2>About Me <Camera size={24} className="icon" /></h2>
+        <div className="section-head">
+          <span className="section-index mono">01 — About</span>
+          <h2 className="section-title display reveal">
+            Hello<span style={{ color: 'var(--accent)' }}>.</span>
+          </h2>
+        </div>
+
+        <div className="about-grid">
+          <div className="about-copy">
+            <p className="about-statement reveal">
+              I&apos;m <strong>Bimme Audrey Zun</strong>, a frontend developer from Yaoundé who turns design ideas into
+              interfaces that feel <span className="about-soft">soft to the touch</span> and sharp in the details.
+            </p>
+            <p className="about-body reveal" style={{ '--d': '0.1s' }}>
+              I build responsive, user-focused experiences with React and Next.js — from mission-driven non-profit
+              sites to conversion-ready storefronts. I care about the space between the pixels: how a button presses,
+              how a page breathes, how a layout holds up on a cracked phone screen on a slow network.
+            </p>
           </div>
-        </ScrollAnimation>
-        
-        <div className="about-content">
-          <div className="row">
-            <ScrollAnimation animation="fadeInLeft" delay={0.3}>
-              <div className="col-left">
-                <div className="about-text">
-                  <h3>
-                    I am Bimme Audrey Zun, a Frontend Web Developer based in Yaounde, Cameroon.
-                  </h3>
-                  <p>
-                    I build responsive, user-focused interfaces with React and Next.js, turning design ideas into polished web experiences that feel intuitive, modern, and conversion-ready.
-                  </p>
-                  
-                  <div className="contact-info">
-                    <div className="info-item">
-                      <h4><Phone className="icon" /> Phone</h4>
-                      <p>+237-673-795-727</p>
-                    </div>
-                    <div className="info-item">
-                      <h4><Mail className="icon" /> Email</h4>
-                      <p>audreybimme@gmail.com</p>
-                    </div>
-                    <div className="info-item">
-                      <h4><BookOpen className="icon" /> Blog</h4>
-                      <p>
-                        <a href="https://bimme.hashnode.dev" target="_blank" rel="noopener noreferrer">
-                          Bimme's Space
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ScrollAnimation>
-            
-            <ScrollAnimation animation="fadeInRight" delay={0.4}>
-              <div className="col-right">
-                <div className="about-image">
-                  <div className="image-placeholder">
-                    <p><Image size={24} className="icon" /> Loading</p>
-                  </div>
-                  
-                  <div className="social-links">
-                    <ul>
-                      <li>
-                        <a href="https://www.linkedin.com/in/bimme-audrey" target="_blank" rel="noopener noreferrer">
-                          <Linkedin size={24} className="icon" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://github.com/Bimme2audrey" target="_blank" rel="noopener noreferrer">
-                          <Github size={24} className="icon" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </ScrollAnimation>
-          </div>
+
+          <aside className="about-card nm reveal" style={{ '--d': '0.15s' }} aria-label="Contact details">
+            <div className="about-monogram" aria-hidden="true">
+              <span className="display emboss">BA</span>
+            </div>
+
+            <ul className="about-facts">
+              <li>
+                <MapPin size={18} />
+                <span className="mono">Based in</span>
+                <span>{profile.location}</span>
+              </li>
+              <li>
+                <Mail size={18} />
+                <span className="mono">Email</span>
+                <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              </li>
+              <li>
+                <Phone size={18} />
+                <span className="mono">Phone</span>
+                <a href={`tel:${profile.phone.replace(/\s/g, '')}`}>{profile.phone}</a>
+              </li>
+              <li>
+                <PenLine size={18} />
+                <span className="mono">Writing</span>
+                <a href={profile.blog} target="_blank" rel="noopener noreferrer">
+                  Bimme&apos;s Space
+                </a>
+              </li>
+            </ul>
+
+            <div className="about-socials">
+              {profile.socials.slice(0, 3).map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="nm-btn">
+                  {s.label} <ArrowUpRight size={14} />
+                </a>
+              ))}
+            </div>
+          </aside>
         </div>
       </div>
     </section>

@@ -1,10 +1,5 @@
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://bimmeaudrey.vercel.app/sitemap.xml
-
-# Block common bot paths
 Disallow: /api/
-Disallow: /_next/
-Disallow: /node_modules/
+
+Sitemap: https://bimmeaudrey.vercel.app/sitemap.xml

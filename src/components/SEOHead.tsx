@@ -1,64 +1,65 @@
+import { profile, projects } from '../data/projects';
+
+// JSON-LD that tells search engines this site *is* Bimme Audrey Zun's profile.
+// ProfilePage + Person is what Google uses for personal/portfolio sites; sameAs ties
+// the site to the social profiles that already rank for the name.
 export default function SEOHead() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Bimme Audrey",
-    "url": "https://bimmeaudrey.vercel.app",
-    "sameAs": [
-      "https://www.linkedin.com/in/bimme-audrey",
-      "https://x.com/small_bimme",
-      "https://github.com/bimme2audrey",
-      "https://hashnode.com/@bimme"
-    ],
-    "jobTitle": "Frontend Web Developer",
-    "description": "Frontend Web Developer specializing in React, Next.js, and modern web technologies",
-    "knowsAbout": [
-      "React",
-      "Next.js",
-      "JavaScript",
-      "TypeScript",
-      "Responsive Web Design",
-      "Web Development"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Anexiums"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Yaounde",
-      "addressCountry": "Cameroon"
-    },
-    "email": "bimmedev@gmail.com"
+  const SITE = profile.url;
+  const personId = `${SITE}/#person`;
+
+  const person = {
+    '@type': 'Person',
+    '@id': personId,
+    name: profile.name,
+    alternateName: ['Bimme Audrey', 'Audrey Bimme', 'Bimme Audrey Z.', 'Bimme'],
+    givenName: 'Bimme Audrey',
+    familyName: 'Zun',
+    url: SITE,
+    image: `${SITE}/opengraph-image`,
+    email: `mailto:${profile.email}`,
+    jobTitle: profile.role,
+    description:
+      'Frontend web developer in Yaoundé, Cameroon, building responsive websites and interfaces with React and Next.js.',
+    worksFor: { '@type': 'Organization', name: 'Anexiums', url: 'https://anexiums.com/' },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Siantou University Institute' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Yaoundé', addressCountry: 'CM' },
+    knowsAbout: ['Frontend development', 'React', 'Next.js', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Responsive web design', 'UI design'],
+    sameAs: profile.socials.map((s) => s.href),
   };
 
-  const websiteData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Bimme Audrey Portfolio",
-    "url": "https://bimmeaudrey.vercel.app",
-    "description": "Frontend Web Developer portfolio showcasing React projects and modern responsive websites",
-    "author": {
-      "@type": "Person",
-      "name": "Bimme Audrey"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://bimmeaudrey.vercel.app/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+  const graph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ProfilePage',
+        '@id': `${SITE}/#profile`,
+        url: SITE,
+        name: 'Bimme Audrey Zun — Frontend Developer',
+        inLanguage: 'en',
+        mainEntity: { '@id': personId },
+        hasPart: projects.map((p) => ({
+          '@type': 'CreativeWork',
+          name: p.title,
+          url: `${SITE}/project/${p.id}`,
+          creator: { '@id': personId },
+        })),
+      },
+      person,
+      {
+        '@type': 'WebSite',
+        '@id': `${SITE}/#website`,
+        url: SITE,
+        name: 'Bimme Audrey Zun',
+        alternateName: ['Bimme Audrey', 'Bimme Audrey Portfolio'],
+        publisher: { '@id': personId },
+      },
+    ],
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
-      />
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph).replace(/</g, '\\u003c') }}
+    />
   );
 }

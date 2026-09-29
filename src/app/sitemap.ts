@@ -1,38 +1,16 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
+import { profile, projects } from '../data/projects';
 
+// Only real URLs — search engines ignore #fragments, so section anchors don't belong here.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://bimmeaudrey.vercel.app'
-
+  const lastModified = new Date();
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/#about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#skills`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#portfolio`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+    { url: profile.url, lastModified, changeFrequency: 'monthly', priority: 1 },
+    ...projects.map((p) => ({
+      url: `${profile.url}/project/${p.id}`,
+      lastModified,
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
-    },
-  ]
+    })),
+  ];
 }

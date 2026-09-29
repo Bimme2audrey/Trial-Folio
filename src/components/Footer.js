@@ -1,23 +1,23 @@
+'use client';
+
 import React from 'react';
+import { ArrowUp } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
-          <div className="copyright">
-            <p>&copy; Bimme Audrey Z 2️⃣0️⃣2️⃣3️⃣.</p>
-          </div>
-        </div>
-        
-        <div className="scroll-to-top" onClick={scrollToTop}>
-          <i className="fa fa-angle-up"></i>
-        </div>
+      <div className="container footer-inner">
+        <p className="mono">© {new Date().getFullYear()} Bimme Audrey Zun</p>
+        <p className="mono footer-mid">Designed &amp; built in Yaoundé · Next.js</p>
+        <button
+          type="button"
+          className="nm-btn footer-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Back to top"
+        >
+          <ArrowUp size={18} />
+        </button>
       </div>
     </footer>
   );

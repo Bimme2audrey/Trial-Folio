@@ -1,45 +1,65 @@
 import React from 'react';
 import './Skills.css';
-import { Palette } from 'lucide-react';
+
+const groups = [
+  {
+    title: 'Build',
+    note: 'The stack I reach for every day.',
+    keys: [
+      { name: 'HTML5', glyph: '<>' },
+      { name: 'CSS3 & Motion', glyph: '{}' },
+      { name: 'Tailwind CSS', glyph: '≈' },
+      { name: 'JavaScript', glyph: 'JS' },
+      { name: 'TypeScript', glyph: 'TS' },
+      { name: 'React', glyph: '⚛' },
+      { name: 'Next.js', glyph: 'N' },
+      { name: 'Git & GitHub', glyph: '⎇' },
+    ],
+  },
+  {
+    title: 'Work',
+    note: 'How I show up on a team.',
+    keys: [
+      { name: 'Creativity', glyph: '✦' },
+      { name: 'Communication', glyph: '◎' },
+      { name: 'Team Work', glyph: '⁂' },
+    ],
+  },
+];
 
 const Skills = () => {
-  const skillsData = [
-    { name: "HTML 5", percentage: 90 },
-    { name: "CSS 3 Animation", percentage: 80 },
-    { name: "JavaScript", percentage: 85 },
-    { name: "ReactJS", percentage: 75 },
-    { name: "Next.js", percentage: 70 },
-    { name: "Communication", percentage: 70 },
-    { name: "Creativity", percentage: 80 },
-    { name: "Team Work", percentage: 70 },
-    { name: "Github", percentage: 70 }
-  ];
-
   return (
-    <section id="skills" className="skills">
+    <section id="skills" className="section skills">
       <div className="container">
-        <div className="section-heading">
-          <h2>Skills <Palette size={24} className="icon" /></h2>
+        <div className="section-head">
+          <span className="section-index mono">03 — Skills</span>
+          <h2 className="section-title display reveal">Toolkit</h2>
+          <p className="section-lede reveal" style={{ '--d': '0.1s' }}>
+            Press a key. Tactile is kind of my thing.
+          </p>
         </div>
 
-        <div className="skills-content">
-          <div className="skills-grid">
-            {skillsData.map((skill, index) => (
-              <div key={index} className="skill-item">
-                <div className="skill-header">
-                  <span className="skill-name">{skill.name}</span>
-                  <span className="skill-percentage">{skill.percentage}%</span>
-                </div>
-
-                <div className="skill-bar">
-                  <div
-                    className="skill-progress"
-                    style={{ width: `${skill.percentage}%` }}
-                  ></div>
-                </div>
+        <div className="skills-board">
+          {groups.map((g, gi) => (
+            <div key={g.title} className="skills-group reveal" style={{ '--d': `${gi * 0.12}s` }}>
+              <div className="skills-group-head">
+                <h3 className="display">{g.title}</h3>
+                <p>{g.note}</p>
               </div>
-            ))}
-          </div>
+              <ul className="skills-keys nm-in">
+                {g.keys.map((k) => (
+                  <li key={k.name}>
+                    <button type="button" className="skill-key">
+                      <span className="skill-glyph display" aria-hidden="true">
+                        {k.glyph}
+                      </span>
+                      <span className="skill-name">{k.name}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>

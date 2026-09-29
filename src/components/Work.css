@@ -1,0 +1,160 @@
+.work-hint {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+}
+.work-hint:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.work-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.work-row {
+  border-bottom: 1px solid var(--line);
+}
+
+.work-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr auto 64px;
+  align-items: center;
+  gap: 1.5rem;
+  padding: clamp(22px, 3vw, 38px) 0;
+  transition: padding 0.6s var(--ease-out), color 0.3s;
+}
+.work-link.is-hovered {
+  padding-left: 18px;
+}
+
+.work-num {
+  color: var(--ink-mute);
+}
+.work-title {
+  min-width: 0;
+  font-size: clamp(1.6rem, 3.6vw, 3rem);
+  line-height: 1;
+  transition: color 0.3s, transform 0.6s var(--ease-out);
+}
+.work-link.is-hovered .work-title {
+  color: var(--accent);
+}
+
+.work-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  text-align: right;
+}
+.work-cat {
+  font-weight: 600;
+}
+.work-tags {
+  color: var(--ink-mute);
+  font-size: 0.68rem;
+}
+
+.work-arrow {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--nm-out-sm);
+  transition: box-shadow 0.4s var(--ease-out), transform 0.5s var(--ease-spring), color 0.3s;
+}
+.work-link.is-hovered .work-arrow {
+  box-shadow: var(--nm-in-sm);
+  color: var(--accent);
+  transform: rotate(45deg);
+}
+
+/* Inline thumbnail only on touch / small screens. Scoped to .work-link so it always
+   beats .plogo { display: grid } regardless of stylesheet order. */
+.work-link .work-thumb {
+  display: none;
+}
+
+/* Cursor-following preview */
+.work-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  width: 200px;
+  aspect-ratio: 1;
+  pointer-events: none;
+  border-radius: 28px;
+  padding: 10px;
+  background: var(--surface);
+  box-shadow: var(--nm-out), 0 30px 60px -30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  scale: 0.6;
+  transition: opacity 0.35s var(--ease-out), scale 0.5s var(--ease-spring);
+}
+.work-preview.is-visible {
+  opacity: 1;
+  scale: 1;
+}
+.work-preview-item {
+  padding: inherit;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.work-preview-item.is-active {
+  opacity: 1;
+}
+.work-preview-item .plogo {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+@media (hover: none), (max-width: 900px) {
+  .work-preview {
+    display: none;
+  }
+  .work-link {
+    grid-template-columns: 1fr 44px;
+    gap: 0.9rem 1rem;
+  }
+  .work-link.is-hovered {
+    padding-left: 0;
+  }
+  .work-num {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+  }
+  .work-title {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: clamp(1.5rem, 7vw, 2.4rem);
+  }
+  .work-meta {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .work-arrow {
+    grid-column: 2;
+    grid-row: 1;
+    width: 44px;
+    height: 44px;
+  }
+  .work-link .work-thumb {
+    display: grid;
+    grid-column: 1 / -1;
+    aspect-ratio: 5 / 2;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--nm-in-sm);
+  }
+}
